@@ -245,7 +245,7 @@ function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 </script>
-<script type="module" defer>
+<script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
   // TODO: Add SDKs for Firebase products that you want to use
@@ -264,9 +264,36 @@ function scrollToTop() {
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
+import { getFirestore, collection, addDoc } from 
+"https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+
+const db = getFirestore();
+
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
+
+  try {
+    await addDoc(collection(db, "users"), {
+      name,
+      email,
+      subject,
+      message,
+      createdAt: new Date()
+    });
+    alert("Message sent!");
+  } catch (err) {
+    console.error("Error:", err);
+  }
+});
 </script>
 </body>
 </html>
+
 
 
 
