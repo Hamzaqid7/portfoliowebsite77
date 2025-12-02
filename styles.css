@@ -434,7 +434,7 @@ h1, h2, h3 {
 }
 .nav-menu {
   position: fixed;
-  bottom: -100px;
+  bottom: -200px;
   left: 0;
   right: 0;
   z-index: 111111;
@@ -451,17 +451,18 @@ h1, h2, h3 {
   bottom: 30px;
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 8px;
   flex-direction: row;
   background-color: #91ffc4;
   border: 0.5px solid #000;
   border-radius: 30px;
-  width: 90%;
+  width: auto;
   height: auto;
   overflow: hidden;
-  padding: 5px 3px;
+  padding: 5px 8px;
 }
 .nav-menu.active {
   bottom: 0;
@@ -498,7 +499,7 @@ h1, h2, h3 {
 }
 .cv-button {
     top: 15px;
-    right: 100px;
+    right: 80px;
 }
     .hero-content {
         max-width: 100%;
