@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hamzaqid7.github.io/portfoliowebsite77/sitemap.xml
