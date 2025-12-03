@@ -6,12 +6,857 @@
     <title>Hamza Qidwai - Portfolio Website</title>
     <link rel="icon" type="image/x-icon" href="Images/logo.ico">
     <meta name="description" content="Hamza Qidwai's Portfolio Website - Showcasing Skills, Projects, and Contact Information.">
-    <link rel="stylesheet" href="styles.css">
     <link rel="preload" as="image" href="Images/mypic.avif">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     <!-- Load font stylesheet directly (non-blocking with display=swap) -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+    --primary-green: #38b000; /* A vibrant green similar to the image */
+    --text-dark: #1f1f1f;
+    --text-light: #555555;
+    --background-light: #f7f7f7;
+    --font-heading: 'Poppins', sans-serif; /* Use a modern font */
+    --font-body: 'Inter', sans-serif;
+}
+
+/* Basic Reset and Typography */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: #ffffff; /* White background for the main content */
+    padding-top: 65px; /* Space for fixed header */
+    scroll-behavior: smooth;
+    width: 100%;
+    margin: 0;
+}
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+}
+/* --- Header / Navigation --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #79ffb3;
+    border-bottom: 1px solid #eee; /* Subtle separator */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    margin: 0;
+    width: 100%;
+}
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: green;
+}
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 1.25em;
+    font-weight: 500;
+    font-family: ui-monospace;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: var(--primary-green);
+}
+.cv-button {
+    position: fixed;
+    background-color: transparent;
+    border: 1px solid var(--primary-green);
+    color: var(--primary-green);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+.cv-button:hover {
+    background-color: var(--primary-green);
+    color: white;
+}
+/* --- Hero Section --- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 5%;
+    min-height: 100vh;
+    /* Add padding/margin for the scattered dots effect */
+    position: relative; 
+    width: 100%;
+}
+.hero-content {
+    position: relative;
+    flex: 1;
+}
+.welcome {
+    color: var(--primary-green);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.hero-buttons {
+    margin: 5% 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 24px;
+    width: 100%;
+}
+.hero-content h1 {
+    font-size: 44px;
+    line-height: 66px;
+    margin-bottom: 20px;
+}
+.hero-content h1 strong {
+    color: var(--primary-green);
+    font-weight: inherit; /* Keeps the bold effect, but uses the green color */
+}
+
+.intro-text {
+    color: green;
+    font-weight: 500;
+    font-family: system-ui;
+}
+
+.hero-buttons button {
+    padding: 12px 25px;
+    border-radius: 15px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.contact-button {
+    background-color: #36cc00;
+    color: #000000b9;
+}
+
+.portfolio-button {
+    background-color: teal;
+    color: #fff;
+    border: 2px solid var(--primary-green);
+}
+.portfolio-button:hover {
+    background: #fff;
+    color: teal;
+    border-color: #000;
+}
+.contact-button:hover {
+    background: var(--primary-green);
+    color: #000;
+}
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    /* You would need to use CSS for the specific green background shape */
+}
+
+/* --- Stats Section --- */
+.stats-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 5%;
+    background-color: var(--background-light); /* Light background for separation */
+    border-radius: 10px; /* Rounded corners */
+    margin: 40px 0; /* To visually separate it */
+    row-gap: 24px;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.stat-number {
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-weight: 600;
+    font-family: sans-serif;
+    color: var(--text-dark);
+}
+.footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #555;
+}
+
+/* --- Basic Responsiveness (for larger screens) --- */
+@media (min-width: 768px) {
+.intro-text {
+    font-size: 22px;
+    line-height: 33px;
+    width: 75%;
+}  
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-menu ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+ .nav-menu ul li {
+  margin-top: 0;
+  background: transparent;
+  letter-spacing: 1.5px;
+}
+.nav-menu ul li a {
+  color: green;
+  text-decoration: none;
+  margin-left: 0;
+  margin-right: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+  text-shadow: 6px 6px 8px rgb(42, 190, 13);
+}
+.nav-menu ul li a:hover {
+  color: black;
+  text-decoration: underline;
+}
+.nav-menu button {
+  position: fixed;
+  background: transparent;
+  top: 1.5rem;
+  right: 60px;
+  margin-right: 2%;
+  font-size: 28px;
+  border: none;
+  cursor: pointer;
+}
+.nav-link.active {
+  border-bottom: 3px solid #fff;
+  color: #fff;
+  font-weight: 700;
+}
+.cv-button {
+    top: 15px;
+    right: 15px;
+}
+    .hero-section {
+        flex-wrap: wrap;
+    }
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .hero-image-container {
+        justify-content: center;
+    }
+    .stats-section {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .stat-number {
+        font-size: 44px;
+    }
+    .stat-label {
+        font-size: 24px;
+    }
+    .stat-box {
+        min-width: 30%;
+        margin: 10px 0;
+    }
+#scroll2top {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 40px;
+  right: 0px;
+  z-index: 9999;
+  font-size: 20px;
+  border-radius: 100px;
+  border: 2px solid black;
+  cursor: pointer;
+  padding: auto;
+  transition: 0.3s ease-in-out;
+}
+.contact-form {
+  width: 60%;
+  background: #41ff94f0;
+  padding: 25px 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+  #contactForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact-form label {
+    font-size: 1.4rem;
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  .contact-form input, 
+  .contact-form textarea {
+      padding: 12px;
+      border: 1px solid #000;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: normal;
+      resize: vertical;
+      background-color: white;
+      width: 80%;
+    }
+    .contact-form button {
+      margin-top: 20px;
+      padding: 10px 18px;
+      border: none;
+      background: white;
+      color: teal;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 15px;
+      border: 1px solid #000;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .contact-form button:hover {
+      background: #1af864;
+      color: #000;
+      border: 2px solid #fff;
+    }
+.formarea {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.formareadiv {
+    text-align: center;
+    margin: 3% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-intro-text {
+    font-size: 18px;
+    line-height: 27px;
+    width: 85%;
+    color: var(--text-dark);
+}
+#alert {
+  font-size: 1.6rem;
+  background: teal;
+  width: fit-content;
+  height: fit-content;
+  color: #fff;
+}
+}
+@media (max-width: 767px) {
+.nav-links {
+    display: none; /* Hide for mobile to simplify */
+}
+.menu-toggle {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.bar1, .bar2, .bar3 {
+  width: 30px;
+  height: 3px;
+  background-color: green;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.change .bar1 {
+  transform: translate(0, 7px) rotate(-47deg);
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+#scroll2top {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 40px;
+  right: 0px;
+  z-index: 99;
+  font-size: 20px;
+  border-radius: 200px;
+  border: 2px solid black;
+  background: transparent;
+  cursor: pointer;
+  padding: auto;
+  transition: 0.3s ease-in-out;
+}
+.intro-text {
+    font-size: 18px;
+    line-height: 27px;
+}
+.nav-menu {
+  position: fixed;
+  bottom: -200px;
+  left: 0;
+  right: 0;
+  z-index: 111111;
+  transition: bottom 0.3s ease-in-out;
+  display: flex;
+  width: 100%;
+  background-color: teal;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}  
+.nav-menu ul {
+  position: absolute;
+  bottom: 30px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-direction: row;
+  background-color: #91ffc4;
+  border: 0.5px solid #000;
+  border-radius: 30px;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  padding: 5px 8px;
+}
+.nav-menu.active {
+  bottom: 0;
+  text-decoration: underline;
+  color: #1d52c4;
+}
+.nav-links.active {
+  text-decoration: underline;
+  background-color: #1253b4;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+  padding: 5px 8px;
+}
+.nav-links.active:hover {
+  background-color: #acacac;
+  color: #000;
+}
+.nav-menu ul li {
+    margin: 5px auto;
+    border-radius: 15px;
+    background: #fff;
+}
+.nav-menu ul li a {
+  padding: 5px;
+  border-radius: 8px;
+  letter-spacing: 0px;
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  display: block;
+  font-weight: 600;
+  font-family: helvetica;
+}
+.cv-button {
+    top: 15px;
+    right: 80px;
+}
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        order: 2;
+    }
+    .hero-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+    }
+    .hero-section {
+        padding: 50px 5%;
+    }
+    .stat-number {
+        font-size: 40px;
+    }
+    .stat-label {
+        font-size: 20px;
+    }
+    .stats-section {
+        flex-direction: column;
+        margin: 40px 0;
+        min-height: 100vh;
+    }
+    .stat-box {
+        margin-bottom: 20px;
+    }
+.contact-form {
+  width: 95%;
+  background: #41ff94f0;
+  padding: 25px 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+  #contactForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact-form label {
+    font-size: 18px;
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  .contact-form input, 
+  .contact-form textarea {
+      padding: 12px;
+      border: 1px solid #000;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: normal;
+      resize: vertical;
+      background-color: white;
+      width: 80%;
+    }
+    .contact-form button {
+      margin-top: 20px;
+      padding: 10px 18px;
+      border: none;
+      background: white;
+      color: teal;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 15px;
+      border: 1px solid #000;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .contact-form button:hover {
+      background: #1af864;
+      color: #000;
+      border: 2px solid #fff;
+    }
+.formarea {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.formareadiv {
+    text-align: center;
+    margin: 5% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-intro-text {
+    font-size: 18px;
+    line-height: 27px;
+    width: 85%;
+    color: var(--text-dark);
+}
+#alert {
+  font-size: 1.4rem;
+  background: teal;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 80%;
+  height: fit-content;
+  color: #fff;
+}
+}
+
+/* --- Skills Section --- */
+.skills-section {
+    padding: 80px 10%;
+    background-color: #ffffff;
+}
+
+.skills {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5em;
+    color: var(--text-dark);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-green);
+    margin: 15px auto 0;
+}
+
+.skills-container {
+    display: grid;
+    gap: 30px;
+}
+
+.skill-item {
+    background-color: #ededed;
+    padding: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border: 1px solid #eee;
+    cursor: pointer;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(56, 176, 0, 0.15);
+    background-color: #f0f8e6;
+    border-color: var(--primary-green);
+}
+
+.skill-icon {
+    font-size: 3.5em;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-icon {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.skill-name {
+    font-size: 1.3em;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.skill-description {
+    font-size: 0.95em;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Skills Section Responsiveness */
+@media (min-width: 768px) {
+    .skills-section {
+        padding: 30px 15px;
+        min-height: 100vh;
+    }
+    
+    .section-title {
+        font-size: 2em;
+    }
+    
+    .skills-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 767px) {
+    .skills-section {
+        padding: 40px 5%;
+    }
+    
+    .section-title {
+        font-size: 1.8em;
+    }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .skill-item {
+        padding: 30px 20px;
+    }
+    
+    .skill-icon {
+        font-size: 2.5em;
+    }
+}
+.projects {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+/* --- Projects Section --- */
+.projects-section {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 5%;
+    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+}
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+.project-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    border: 1px solid teal;
+    cursor: pointer;
+}
+.project-item:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 40px rgba(56, 176, 0, 0.2);
+    filter: brightness(1.02);
+}
+.project-image {
+    width: 100%;
+    height: 175px;
+    object-fit: fill;
+    transition: transform 0.4s ease, filter 0.3s ease;
+    display: block;
+}
+.project-item:hover .project-image {
+    transform: scale(1.08);
+    filter: brightness(0.95);
+}
+.project-title {
+    font-size: 1.4em;
+    color: var(--text-dark);
+    padding: 20px 20px 10px 20px;
+    font-weight: 600;
+    margin: 0;
+}
+.project-description {
+    font-size: 0.95em;
+    color: var(--text-light);
+    padding: 0 20px 25px 20px;
+    line-height: 1.6;
+    margin: 0;
+}
+.project-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-green), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+.project-item {
+    position: relative;
+}
+.project-item:hover::after {
+    transform: scaleX(1);
+}
+/* Projects Section Responsiveness */
+@media (min-width: 768px) {
+    .projects-section {
+        padding: 60px 5%;
+    }   
+    .projects-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+    .section-title {
+        font-size: 2em;
+        margin: 3% 0;
+    }
+}
+@media (max-width: 767px) {
+    .projects-section {
+        padding: 40px 5%;
+    }   
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0 5%;
+    }
+    .section-title {
+        font-size: 1.8em;
+        margin: 5% 0;
+    }
+    .project-image {
+        height: 200px;
+    }
+    .project-title {
+        font-size: 1.2em;
+        padding: 15px 15px 8px 15px;
+    }
+    .project-description {
+        padding: 0 15px 20px 15px;
+        font-size: 0.9em;
+    }
+}
+    </style>
 </head>
 <body>
 
@@ -296,6 +1141,7 @@ function scrollToTop() {
 </script>
 </body>
 </html>
+
 
 
 
