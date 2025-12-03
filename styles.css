@@ -36,7 +36,7 @@ h1, h2, h3 {
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
-    background-color: #ffffff;
+    background-color: #79ffb3;
     border-bottom: 1px solid #eee; /* Subtle separator */
     position: fixed;
     top: 0;
@@ -842,3 +842,4 @@ h1, h2, h3 {
         font-size: 0.9em;
     }
 }
+
