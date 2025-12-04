@@ -50,6 +50,54 @@ body {
     width: 100%;
     margin: 0;
 }
+        /* Container to establish the aspect ratio */
+.video-container {
+    margin: 0;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+    background: #e7e7e7;
+}
+.video-container h4 {
+    position: absolute;
+    text-align: center;
+    text-decoration: underline;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-dark);
+    font-weight: 600;
+    color: green;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 10;
+}
+/* The actual video element */
+.video-player {
+    /* Makes the video element fill the container set by the padding-bottom trick */
+    position: relative;
+    width: 100%;
+    padding: 0 5%;
+    background: black;
+    height: 100%;
+    /* Ensures the video content is displayed correctly */
+    object-fit: fill; 
+}
+
+/* Optional: Styling for controls (varies by browser, but can be customized) */
+.video-player::cue {
+    /* Custom styling for subtitles/captions if used */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
 h1, h2, h3 {
     font-family: var(--font-heading);
     line-height: 1.2;
@@ -227,6 +275,9 @@ h1, h2, h3 {
 
 /* --- Basic Responsiveness (for larger screens) --- */
 @media (min-width: 768px) {
+    .video-container h4 {
+        font-size: 28px;
+    }
 .intro-text {
     font-size: 22px;
     line-height: 33px;
@@ -408,6 +459,9 @@ h1, h2, h3 {
 }
 }
 @media (max-width: 767px) {
+.video-container h4 {
+        font-size: 24px;
+    }
 .nav-links {
     display: none; /* Hide for mobile to simplify */
 }
@@ -997,6 +1051,13 @@ h1, h2, h3 {
         </div>
     </div>
     </section>
+<!-- Video Section -->
+<section class="video-container">
+    <h4>A Video On Wordpress Website Development</h4>
+    <video class="video-player" controls preload="metadata" poster="Images/thumbnail4WP.avif" title="wordpress-tutorial video by Hamza Qidwai" loading="lazy">
+        <source src="Videos/Wordpressweb-tutorial.mp4" type="video/mp4">
+    </video>
+</section>
 <!--Scroll to Top Button-->
 <img id="scroll2top" onclick="scrollToTop()" src="Images/up-arrow.png" width="50px" height="50px" title="click here to go to the top of the page" loading="lazy">
         
@@ -1153,6 +1214,7 @@ function scrollToTop() {
 </script>
 </body>
 </html>
+
 
 
 
