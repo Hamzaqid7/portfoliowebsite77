@@ -1076,10 +1076,6 @@ h1, h2, h3 {
     <video id="myVideo" class="video-player" controls preload="metadata" poster="Images/thumbnail4WP.avif" title="wordpress-tutorial video by Hamza Qidwai" loading="lazy">
         <source src="Videos/Wordpressweb-tutorial.mp4" type="video/mp4">
     </video>
-    <!-- Center Play Button -->
-  <div class="play-overlay" id="playBtn">
-    ▶
-  </div>
 </section>
 <!--Scroll to Top Button-->
 <img id="scroll2top" onclick="scrollToTop()" src="Images/up-arrow.png" width="50px" height="50px" title="click here to go to the top of the page" loading="lazy">
@@ -1163,30 +1159,6 @@ h1, h2, h3 {
   });
 </script>
 <script defer>
-const video = document.getElementById("myVideo");
-  const playBtn = document.getElementById("playBtn");
-
-  // Click on overlay to play
-  playBtn.addEventListener("click", () => {
-    video.play();
-    playBtn.classList.add("hide");
-  });
-
-  // Click on video to toggle play/pause
-  video.addEventListener("click", () => {
-    if (video.paused) {
-      video.play();
-      playBtn.classList.add("hide");
-    } else {
-      video.pause();
-      playBtn.classList.remove("hide");
-    }
-  });
-
-  // When video ends, show play button again
-  video.addEventListener("ended", () => {
-    playBtn.classList.remove("hide");
-  });
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
@@ -1261,6 +1233,7 @@ function scrollToTop() {
 </script>
 </body>
 </html>
+
 
 
 
