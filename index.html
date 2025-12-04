@@ -58,7 +58,7 @@ body {
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,10 +66,11 @@ body {
     background: #e7e7e7;
 }
 .video-container h4 {
+    width: 100%;
     position: absolute;
     text-align: center;
     text-decoration: underline;
-    top: 60px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
     color: var(--text-dark);
@@ -1072,7 +1073,7 @@ h1, h2, h3 {
 <!-- Video Section -->
 <section class="video-container" id="tutorialvideos">
     <h4>A Video On Wordpress Website Development</h4>
-    <video class="video-player" controls preload="metadata" poster="Images/thumbnail4WP.avif" title="wordpress-tutorial video by Hamza Qidwai" loading="lazy">
+    <video id="myVideo" class="video-player" controls preload="metadata" poster="Images/thumbnail4WP.avif" title="wordpress-tutorial video by Hamza Qidwai" loading="lazy">
         <source src="Videos/Wordpressweb-tutorial.mp4" type="video/mp4">
     </video>
     <!-- Center Play Button -->
@@ -1260,6 +1261,7 @@ function scrollToTop() {
 </script>
 </body>
 </html>
+
 
 
 
