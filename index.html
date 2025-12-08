@@ -58,22 +58,19 @@ body {
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    min-height: 80vh;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     padding: 0 5%;
     background: #e7e7e7;
 }
 .video-container h4 {
     width: 100%;
-    position: absolute;
+    position: relative;
     text-align: center;
     text-decoration: underline;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--text-dark);
     font-weight: 600;
     color: green;
     background-color: rgba(255, 255, 255, 0.8);
@@ -1236,6 +1233,7 @@ function scrollToTop() {
 </script>
 </body>
 </html>
+
 
 
 
