@@ -87,7 +87,6 @@ body {
     width: 100%;
     padding: 0 5%;
     background: black;
-    height: 100%;
     /* Ensures the video content is displayed correctly */
     object-fit: fill; 
 }
@@ -290,10 +289,13 @@ h1, h2, h3 {
 }
 
 /* --- Basic Responsiveness (for larger screens) --- */
-@media (min-width: 768px) {
-    .video-container h4 {
-        font-size: 28px;
-    }
+@media (min-width: 1281px) {
+.video-player {
+    height: 600px;
+}
+.video-container h4 {
+    font-size: 28px;
+}
 .intro-text {
     font-size: 22px;
     line-height: 33px;
@@ -476,7 +478,10 @@ h1, h2, h3 {
   color: #fff;
 }
 }
-@media (max-width: 767px) {
+@media (max-width: 1280px) {
+.video-player {
+    height: 100%;
+}
 .video-container h4 {
         font-size: 24px;
     }
@@ -780,9 +785,8 @@ h1, h2, h3 {
     color: var(--text-light);
     line-height: 1.6;
 }
-
 /* Skills Section Responsiveness */
-@media (min-width: 768px) {
+@media (min-width: 1281px) {
     .skills-section {
         padding: 30px 15px;
         min-height: 100vh;
@@ -797,16 +801,13 @@ h1, h2, h3 {
         gap: 24px;
     }
 }
-
-@media (max-width: 767px) {
+@media (max-width: 1280px) {
     .skills-section {
         padding: 40px 5%;
     }
-    
     .section-title {
         font-size: 1.8em;
     }
-    
     .skills-container {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -902,7 +903,7 @@ h1, h2, h3 {
     transform: scaleX(1);
 }
 /* Projects Section Responsiveness */
-@media (min-width: 768px) {
+@media (min-width: 1281px) {
     .projects-section {
         padding: 60px 5%;
     }   
@@ -915,7 +916,7 @@ h1, h2, h3 {
         margin: 3% 0;
     }
 }
-@media (max-width: 767px) {
+@media (max-width: 1280px) {
     .projects-section {
         padding: 40px 5%;
     }   
@@ -1233,6 +1234,7 @@ function scrollToTop() {
 </script>
 </body>
 </html>
+
 
 
 
