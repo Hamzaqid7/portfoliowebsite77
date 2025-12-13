@@ -16,7 +16,10 @@
     <link rel="icon" type="image/x-icon" href="Images/logo.ico">
     <link rel="canonical" href="https://hamzaqid7.github.io/portfoliowebsite77/" />
     <meta name="description" content="Hamza Qidwai's Portfolio Website - Showcasing Skills, Projects, and Contact Information.">
-    <link rel="preload" as="image" href="Images/mypic.avif">
+    <link rel="preload" as="image"
+  href="Images/mypic.avif"
+  type="image/avif"
+  fetchpriority="high">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     <!-- Load font stylesheet directly (non-blocking with display=swap) -->
@@ -603,7 +606,6 @@ h1, h2, h3 {
         display: flex;
         flex-direction: column;
         gap: 32px;
-        order: 2;
     }
     .hero-section {
         flex-direction: column;
@@ -967,6 +969,9 @@ h1, h2, h3 {
     </header>
     <main>
         <section class="hero-section">
+            <div class="hero-image-container">
+                <img src="Images/mypic.avif" width="400" height="400" fetchpriority="high" loading="eager" alt="Hamza Aijaz Qidwai's Picture">
+            </div>
             <div class="hero-content">
                 <p class="welcome">Welcome</p>
                 <h1 style="text-transform: capitalize;">Hey, This Is 'Hamza', How can I assist you?</h1>
@@ -977,9 +982,6 @@ h1, h2, h3 {
                     <a href="https://wa.me/923323715253" target="_blank" title="click here to chat with us on whatsapp" onclick="gtag('event', 'whatsapp_click', { 'event_category': 'engagement', 'event_label': 'WhatsApp Contact' });"><button class="contact-button" title="click here to start discussing your project on whatsapp">Contact Me</button></a>
                     <a href="https://www.linkedin.com/in/hamza7qidwaiportfolio/" target="_blank"><button class="portfolio-button" title="click here to visit my linkedin profile">View Profile</button></a>
                 </div>
-            </div>
-            <div class="hero-image-container">
-                <img src="Images/mypic.avif" fetchpriority=high alt="Hamza Aijaz Qidwai's Picture">
             </div>
         </section>
 
@@ -1235,6 +1237,7 @@ function scrollToTop() {
 </script>
 </body>
 </html>
+
 
 
 
