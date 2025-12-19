@@ -81,7 +81,22 @@
     --font-heading: 'Poppins', sans-serif; /* Use a modern font */
     --font-body: 'Inter', sans-serif;
 }
-
+.btn4scroll {
+  position: absolute;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  margin: 0;
+  padding: 8px;
+  gap: 4px;
+  transition: opacity 0.3s ease, background 0.3s ease;
+  height: 40px;
+}
+#scroll2top:hover {
+  background-color: rgb(255, 164, 45);
+  color: #333;
+}
 /* Basic Reset and Typography */
 * {
     box-sizing: border-box;
@@ -1131,8 +1146,8 @@ h1, h2, h3 {
     </video>
 </section>
 <!--Scroll to Top Button-->
-<img id="scroll2top" onclick="scrollToTop()" src="Images/up-arrow.png" width="50px" height="50px" title="click here to go to the top of the page" loading="lazy">
-        
+<button class="btn4scroll" id="scroll2top" onclick="scrollToTop()" title="click here to go to the top of the page."><i class="fa-solid fa-angle-up"></i> Top</button>
+
 <section class="formarea" id="form">
     <div class="formareadiv">
         <h2 class="section-title">Let's Talk</h2>
@@ -1222,17 +1237,56 @@ function startCloseTimer() {
   }, 15000); // 15000 ms = 15 seconds
 }
 });
-const scrollBtn = document.getElementById("scroll2top");
+const scrollBtn = document.querySelector(".btn4scroll");
 
-  // Function to scroll to top when clicked by the user 
-  // Show button when user scrolls down 1500px
-  window.onscroll = function () {
-  if (document.body.scrollTop > 1500 || document.documentElement.scrollTop > 1500) {
+let lastScrollY = window.scrollY;
+let reachedBottom = false;
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.scrollY;
+
+  const atBottom =
+    window.innerHeight + currentScroll >=
+    document.documentElement.scrollHeight - 2;
+
+  /* =========================
+     RESET WHEN BACK AT TOP
+  ========================== */
+  if (currentScroll === 0) {
+    scrollBtn.style.opacity = "1";
+    scrollBtn.style.background = "linear-gradient(90deg, #347dcf, #082985)";
+    scrollBtn.style.color = "white";
+    scrollBtn.style.display = "none";
+    reachedBottom = false;
+  }
+
+  // Detect bottom
+  if (atBottom) {
+    reachedBottom = true;
+  }
+
+  // User scrolled up after reaching bottom
+  if (reachedBottom && currentScroll < lastScrollY) {
+    scrollBtn.style.opacity = "0.3"; // or 0
+    return;
+  }
+  if (!reachedBottom) {
+    scrollBtn.style.opacity = "1"; 
+  }
+
+  // Normal behavior
+  if (currentScroll > 2500) {
     scrollBtn.style.display = "flex";
+    scrollBtn.style.opacity = "1";
+    scrollBtn.style.background = atBottom ? "white" : "linear-gradient(90deg, #347dcf, #082985)";
+    scrollBtn.style.color = atBottom ? "#0051ff" : "white";
   } else {
     scrollBtn.style.display = "none";
+    reachedBottom = false;
   }
-};
+
+  lastScrollY = currentScroll;
+});
 // Scroll to top function
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1240,6 +1294,7 @@ function scrollToTop() {
 </script>
 </body>
 </html>
+
 
 
 
