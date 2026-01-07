@@ -310,7 +310,7 @@ h1, h2, h3 {
   letter-spacing: 1.5px;
 }
 .nav-menu ul li a {
-  color: green;
+  color: #000;
   text-decoration: none;
   margin-left: 0;
   margin-right: 1rem;
