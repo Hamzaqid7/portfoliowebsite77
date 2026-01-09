@@ -7,16 +7,13 @@
     --font-body: 'Inter', sans-serif;
 }
 .btn4scroll {
-  position: absolute;
   border: none;
   justify-content: center;
   align-items: center;
-  bottom: 0;
-  margin: 0;
   padding: 8px;
   gap: 4px;
   transition: opacity 0.3s ease, background 0.3s ease;
-  height: 40px;
+  height: 44px;
 }
 #scroll2top:hover {
   background-color: rgb(255, 164, 45);
@@ -380,15 +377,13 @@ h1, h2, h3 {
 #scroll2top {
   display: none; /* Hidden by default */
   position: fixed;
-  bottom: 40px;
+  bottom: 0px;
   right: 0px;
   z-index: 9999;
   font-size: 20px;
-  border-radius: 100px;
-  border: 2px solid black;
+  border-radius: 0px;
+  border: none;
   cursor: pointer;
-  padding: auto;
-  transition: 0.3s ease-in-out;
 }
 .contact-form {
   width: 60%;
@@ -505,16 +500,14 @@ h1, h2, h3 {
 #scroll2top {
   display: none; /* Hidden by default */
   position: fixed;
-  bottom: 40px;
+  bottom: -2px;
   right: 0px;
   z-index: 99;
   font-size: 20px;
-  border-radius: 200px;
-  border: 2px solid black;
+  border-radius: 0px;
+  border: none;
   background: transparent;
   cursor: pointer;
-  padding: auto;
-  transition: 0.3s ease-in-out;
 }
 .intro-text {
     font-size: 18px;
